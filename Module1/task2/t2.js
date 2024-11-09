@@ -6,4 +6,4 @@ const target = document.querySelector('#target');
 
 const greeting = `Hello,${name}`;
 
-target.innerHTML = greeting;`
+target.innerHTML = greeting;
