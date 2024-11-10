@@ -1,23 +1,25 @@
-function chooseHouse(){
+function chooseHouse() {
+  const name = document.getElementById('studentName').value;
 
-  const name=prompt("Enter your name:");
-  const number =Math.floor(Math.random()*4)+1;
+  const numbers = [1, 2, 3, 4];
+  const houseNumber = numbers[Math.floor(Math.random() * numbers.length)];
 
   let house;
 
-  if (number===1){
-    house = "Gryffindor";
-  }else if (number===2){
-    house = "Slytherin";
-  }else if (number===3){
-    house = "Hufflepuff";
-  }else{
-    house = "Ravenclaw";
+  switch (houseNumber) {
+      case 1:
+          house = 'Gryffindor';
+          break;
+      case 2:
+          house = 'Slytherin';
+          break;
+      case 3:
+          house = 'Hufflepuff';
+          break;
+      case 4:
+          house = 'Ravenclaw';
+          break;
   }
 
-
-  const target =document.querySelector('#target');
-  const greeting =${name},you are belongs to ${house};
-
-  target.innerHTML=greeting;
+  document.getElementById('target').textContent = `${name}, you are ${house}.`;
 }

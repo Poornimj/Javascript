@@ -1,14 +1,10 @@
-function leapYear(){
+function leapYear() {
+  const year = parseInt(document.getElementById('yearInput').value);
+  const targetElement = document.getElementById('target');
 
-  const number = parseInt(prompt("Enter the number as a year "));
-
-  let year;
-  if((number%4 ===0 && number %100!==0 || number%400===0)){
-   year= The year,${number} is a leap year;
-  }else {
-    year=The year ${number}, is not a leap year;
+  if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+    targetElement.textContent = `${year} is a leap year.`;
+  } else {
+    targetElement.textContent = `${year} is not a leap year.`;
   }
-  const target = document.querySelector('#target');
-  target.innerHTML=year;
-
 }
