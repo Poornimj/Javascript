@@ -93,6 +93,8 @@ const picArray = [
 ];
 
 const picturesSection = document.getElementById("pictures");
+const dialog = document.querySelector("dialog");
+const modalImage = dialog.querySelector("img");
 
 picArray.forEach((pic) => {
   const article = document.createElement("article");
@@ -120,4 +122,14 @@ picArray.forEach((pic) => {
   article.appendChild(description);
 
   picturesSection.appendChild(article);
+
+  article.addEventListener("click", () => {
+    modalImage.src = pic.image.large;
+    modalImage.alt = pic.title;
+    dialog.showModal();
+  });
+});
+
+dialog.querySelector("span").addEventListener("click", () => {
+  dialog.close();
 });

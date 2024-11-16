@@ -14,13 +14,13 @@ const students = [
   },
 ];
 
-const target = document.querySelector('#target');
+const targetElement = document.getElementById("target");
 
-for(const student of students){
-  // const html = `<option value="${student.id}">${student.name}</option>` ;
-  // target.innerHTML += html;
+for (let student of students) {
   const option = document.createElement("option");
+
   option.value = student.id;
-  option.innerText = student.name;
-  target.appendChild(option);
+  option.textContent = student.name;
+
+  targetElement.appendChild(option);
 }
